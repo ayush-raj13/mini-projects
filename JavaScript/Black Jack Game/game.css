@@ -1,0 +1,44 @@
+body{
+    background-color: rgb(4, 97, 27);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+    text-align: center;
+}
+#player-el{
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    color:rgb(218, 106, 32);
+}
+p{
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    color:goldenrod;
+}
+h3{
+    text-align: center;
+    font-size: 30px;
+    color: whitesmoke;
+}
+button{
+    width: 300px;
+    border-radius: 30px;
+    font-size: 40px;
+    color:darkgreen;
+    background-color: rgb(199, 180, 7);
+    padding-left: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 5px;
+    border-color: black;
+    
+}
+button:hover{
+    cursor:grab;
+    color:black;
+}
+h4{
+    text-align:center;
+    font-size: 30px;
+    color:antiquewhite;
+}
