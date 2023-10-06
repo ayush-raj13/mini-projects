@@ -1,0 +1,7 @@
+Toyota Camry 1345 4 12462 1977 Grey 0
+Ferrari Spyder 1379 2 1500 2015 Red 0
+KIA Seltos 3527 6 22014 2021 Maroon 0
+Toyota Innova 5616 6 50000 2018 Silver 1
+Hyundai Santro 6163 5 86421 2006 White 0
+Lamborghini Aventador 8008 2 1000 2011 Yellow 0
+Maruti Alto 3523 5 97076 1985 Blue 0
