@@ -133,3 +133,9 @@ We welcome contributions from developers of all skill levels. If you'd like to a
 
 Our community will review your contribution, provide feedback, and work together to make this repository even better!
 
+## Contributors
+
+<a href="https://github.com/ayush-raj13/mini-projects/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=ayush-raj13/mini-projects" />
+</a>
+
