@@ -114,6 +114,9 @@ Welcome to the Multilingual Mini-Projects repository! Here, we have a collection
 **Password Generator**
 - Develop a secure password generator that generates strong passwords.
 
+**Space-Invader-App**
+- A simple space-invader game using pygames.
+
 Feel free to explore, contribute, or add your own mini-projects in different programming languages. Let's make this repository a diverse and educational collection of code snippets.
 
 ## Contributing
