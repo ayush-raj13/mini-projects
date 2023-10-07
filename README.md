@@ -117,6 +117,9 @@ Welcome to the Multilingual Mini-Projects repository! Here, we have a collection
 **Space-Invader-App**
 - A simple space-invader game using pygames.
 
+**Simple Calculator (Javascript)**
+- The Simple Calculator is a web-based tool with basic arithmetic operation. 
+
 Feel free to explore, contribute, or add your own mini-projects in different programming languages. Let's make this repository a diverse and educational collection of code snippets.
 
 ## Contributing

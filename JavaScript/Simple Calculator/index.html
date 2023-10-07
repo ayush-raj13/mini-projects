@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Portfolio</title>
+
+  <!-- Include Tailwind CSS and DaisyUI CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@1.20.0/dist/full.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <div class="navbar bg-base-100">
+    <div class="flex-1">
+      <a class="btn btn-ghost normal-case text-xl">Simple Calculator Project</a>
+    </div>
+  </div>
+
+  <!-- Calculator Section -->
+  <section class="py-12">
+    <h2 class="text-3xl font-semibold text-center mb-8">Simple Calculator</h2>
+    <div class="container mx-auto">
+      <div class="grid grid-cols-3 gap-4">
+        <div class="col-span-3 p-4 bg-base-200 rounded-lg shadow-xl">
+          <div class="mb-4">
+            <input type="text" id="calculator-display" class="w-full p-2 border border-base-300 rounded-lg" disabled />
+          </div>
+          <div class="grid grid-cols-4 gap-2">
+            <button class="col-span-3 btn btn-outline" onclick="clearDisplay()">C</button>
+            <button class="btn btn-outline" onclick="appendToDisplay('+')">+</button>
+            <button class="btn btn-outline" onclick="appendToDisplay(this.innerText)">1</button>
+            <button class="btn btn-outline" onclick="appendToDisplay('2')">2</button>
+            <button class="btn btn-outline" onclick="appendToDisplay('3')">3</button>
+            <button class="btn btn-outline" onclick="appendToDisplay('-')">-</button>
+            <button class="btn btn-outline" onclick="appendToDisplay('4')">4</button>
+            <button class="btn btn-outline" onclick="appendToDisplay('5')">5</button>
+            <button class="btn btn-outline" onclick="appendToDisplay('6')">6</button>
+            <button class="btn btn-outline" onclick="appendToDisplay('*')">*</button>
+            <button class="btn btn-outline" onclick="appendToDisplay('7')">7</button>
+            <button class="btn btn-outline" onclick="appendToDisplay('8')">8</button>
+            <button class="btn btn-outline" onclick="appendToDisplay('9')">9</button>
+            <button class="btn btn-outline" onclick="appendToDisplay('/')">/</button>
+            <button class="col-span-2 btn btn-outline" onclick="appendToDisplay('0')">0</button>
+            <button class="btn btn-outline" onclick="calculate()">=</button>
+            <button class="btn btn-outline" onclick="appendToDisplay('.')">.</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="py-4">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2023 Build with ❤️</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Calculator -->
+  <script>
+    let display = document.getElementById('calculator-display');
+    let currentInput = '';
+
+    function appendToDisplay(value) {
+      currentInput += value;
+      display.value = currentInput;
+    }
+
+    function clearDisplay() {
+      currentInput = '';
+      display.value = '';
+    }
+
+    function calculate() {
+      try {
+        currentInput = eval(currentInput);
+        display.value = currentInput;
+      } catch (error) {
+        display.value = 'Error';
+      }
+    }
+  </script>
+</body>
+
+</html>
