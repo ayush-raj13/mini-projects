@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Primary Meta Tags -->
+    <title>BMI Calculator — Hacktoberfest 2023 | Pantelis Theodosiou</title>
+    <meta
+      name="title"
+      content="BMI Calculator — Hacktoberfest 2023 | Pantelis Theodosiou"
+    />
+    <meta
+      name="description"
+      content="Catch an overview of BMI Calculators - essential tools to assess your body mass index and overall health based on weight and height."
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://metatags.io/" />
+    <meta
+      property="og:title"
+      content="BMI Calculator — Hacktoberfest 2023 | Pantelis Theodosiou"
+    />
+    <meta
+      property="og:description"
+      content="Catch an overview of BMI Calculators - essential tools to assess your body mass index and overall health based on weight and height."
+    />
+    <meta
+      property="og:image"
+      content="https://metatags.io/images/meta-tags.png"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://metatags.io/" />
+    <meta
+      property="twitter:title"
+      content="BMI Calculator — Hacktoberfest 2023 | Pantelis Theodosiou"
+    />
+    <meta
+      property="twitter:description"
+      content="Catch an overview of BMI Calculators - essential tools to assess your body mass index and overall health based on weight and height."
+    />
+    <meta
+      property="twitter:image"
+      content="https://metatags.io/images/meta-tags.png"
+    />
+
+    <!-- Meta Tags Generated with https://metatags.io -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="bg-white text-black antialiased dark:bg-gray-950 dark:text-white relative"
+  >
+    <section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+      <div class="flex h-screen flex-col justify-between">
+        <include src="partials/nav.html"></include>
+
+        <main class="mb-auto">
+          <div class="divide-y divide-gray-200 dark:divide-gray-700">
+            <div class="space-y-2 pb-8 pt-6 md:space-y-5">
+              <h1
+                class="text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14"
+              >
+                BMI Calculator
+              </h1>
+              <p class="text-lg leading-7 text-gray-500 dark:text-gray-400">
+                A BMI Calculator application created with JavaScript and
+                Tailwind.css
+              </p>
+            </div>
+
+            <!-- Sex selection -->
+            <div class="py-6">
+              <div class="grid grid-cols-2 gap-2">
+                <!-- Male -->
+                <div
+                  id="male-sex"
+                  class="text-white bg-gray-900 min-h-[150px] rounded-lg p-5 flex flex-col justify-center items-center gap-2 border border-transparent hover:border-primary-500 hover:cursor-pointer"
+                >
+                  <div>
+                    <img
+                      src="./assets/icons/male.png"
+                      alt="Male icon"
+                      class="invert brightness-100 h"
+                    />
+                  </div>
+                  <div>
+                    <p class="m-0 text-3xl font-light">Male</p>
+                  </div>
+                </div>
+
+                <!-- Female -->
+                <div
+                  id="female-sex"
+                  class="text-white bg-gray-900 min-h-[150px] rounded-lg p-5 flex flex-col justify-center items-center gap-2 border border-transparent hover:border-primary-500 hover:cursor-pointer"
+                >
+                  <div>
+                    <img
+                      src="./assets/icons/female.png"
+                      alt="Female icon"
+                      class="invert brightness-100 h"
+                    />
+                  </div>
+                  <div>
+                    <p class="m-0 text-3xl font-light">Female</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Height selection -->
+            <div class="py-6">
+              <div class="grid grid-cols-1">
+                <div
+                  class="text-white bg-gray-900 min-h-[150px] rounded-lg p-5 flex flex-col justify-center items-center gap-2"
+                >
+                  <div>
+                    <p class="m-0 text-3xl font-light">Height</p>
+                  </div>
+                  <div class="w-full">
+                    <label
+                      id="height-label"
+                      for="height"
+                      class="block mb-2 text-3xl text-center font-medium text-gray-900 dark:text-white"
+                      >165 cm</label
+                    >
+                    <input
+                      id="height"
+                      type="range"
+                      min="60"
+                      max="270"
+                      step="1"
+                      value="165"
+                      class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Kilograms and Age -->
+            <div class="py-6">
+              <div class="grid grid-cols-2 gap-2">
+                <!-- Kilograms -->
+                <div
+                  class="text-white bg-gray-900 min-h-[150px] rounded-lg p-5 flex flex-col justify-center items-center gap-2"
+                >
+                  <div>
+                    <p class="m-0 text-3xl font-light">Weight</p>
+                  </div>
+                  <div class="w-full">
+                    <label
+                      id="weight-label"
+                      for="weight"
+                      class="block mb-2 text-3xl text-center font-medium text-gray-900 dark:text-white"
+                      >50 Kg</label
+                    >
+                    <input
+                      id="weight"
+                      type="range"
+                      min="1"
+                      max="300"
+                      step="0.1"
+                      value="50"
+                      class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+                    />
+                  </div>
+                </div>
+
+                <!-- Age -->
+                <div
+                  class="text-white bg-gray-900 min-h-[150px] rounded-lg p-5 flex flex-col justify-between items-center gap-2"
+                >
+                  <div>
+                    <p class="m-0 text-3xl font-light">Age</p>
+                  </div>
+                  <div class="w-full">
+                    <label
+                      id="age-label"
+                      for="age"
+                      class="block mb-2 text-3xl text-center font-medium text-gray-900 dark:text-white"
+                      >15</label
+                    >
+                    <div class="grid grid-cols-3">
+                      <input
+                        id="age-day"
+                        type="number"
+                        min="1"
+                        max="31"
+                        class="m-0 block rounded-l hover:border-primary-500 px-3 py-[0.25rem] text-gray-900 bg-transparent border border-gray-700 text-white focus:outline-none appearance-none"
+                        placeholder="DD"
+                      />
+                      <input
+                        id="age-month"
+                        min="1"
+                        max="12"
+                        type="number"
+                        class="m-0 block hover:border-primary-500 px-3 py-[0.25rem] text-gray-900 bg-transparent border-t border-b border-gray-700 text-white focus:outline-none appearance-none"
+                        placeholder="MM"
+                      />
+                      <input
+                        id="age-year"
+                        type="number"
+                        min="1900"
+                        max="2100"
+                        class="m-0 block rounded-r hover:border-primary-500 px-3 py-[0.25rem] text-gray-900 bg-transparent border border-gray-700 text-white focus:outline-none appearance-none"
+                        placeholder="YYYY"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="py-6">
+              <div class="grid grid-cols-1">
+                <button
+                  id="calculate-btn"
+                  class="bg-primary-500 hover:bg-primary-600 text-white font-bold py-2 px-4 rounded inline-flex justify-center items-center w-full"
+                >
+                  <span>Calculate</span>
+                </button>
+              </div>
+            </div>
+
+            <include src="partials/bmi_result.html"></include>
+            <include src="partials/error.html"></include>
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
