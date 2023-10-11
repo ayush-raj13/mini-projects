@@ -1,0 +1,19 @@
+.parent__list {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.parent__list .list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1rem;
+  padding: 1rem;
+  width: max-content;
+}
+
+.css-g6pte {
+  margin: 0 !important;
+}
