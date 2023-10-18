@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Input Page</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <form id="userInputForm" method="post" action="/result">
+            <div class="form-group">
+                <label for="userInput">Enter a Sentence:</label>
+                <input type="text" name="message" class="form-control" id="userInput" placeholder="Type something...">
+            </div>
+            <button type="submit" class="btn btn-primary" >Submit</button>
+        </form>
+        <div id="output" class="mt-3"></div>
+    </div>
+</body>
+</html>
