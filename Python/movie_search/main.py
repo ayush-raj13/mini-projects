@@ -1,4 +1,7 @@
 import requests
+from decouple import config
+
+API_KEY = config('API_KEY')
 
 def search_movie(title, api_key):
     base_url = "http://www.omdbapi.com/"
@@ -17,7 +20,7 @@ def search_movie(title, api_key):
         print("Movie not found.")
 
 def main():
-    api_key = "e3142db9"
+    api_key = API_KEY
 
     while True:
         print("\n--- Movie Database ---")
