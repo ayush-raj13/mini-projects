@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calendar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 20px 0;
+    }
+
+    .calendar {
+      max-width: 600px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+    }
+
+    .day {
+      padding: 10px;
+      border: 1px solid #ccc;
+      background: #f7f7f7;
+    }
+
+    .day:hover {
+      background: #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Calendar</h1>
+  <div class="calendar" id="calendar">
+    <!-- JavaScript will populate this area -->
+  </div>
+
+  <script>
+    const calendar = document.getElementById("calendar");
+
+    function generateCalendar(year, month) {
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+      const firstDayOfMonth = new Date(year, month, 1).getDay();
+
+      let html = "<div class='day'>Sun</div>";
+      html += "<div class='day'>Mon</div>";
+      html += "<div class='day'>Tue</div>";
+      html += "<div class='day'>Wed</div>";
+      html += "<div class='day'>Thu</div>";
+      html += "<div class='day'>Fri</div>";
+      html += "<div class='day'>Sat</div>";
+
+      for (let i = 0; i < firstDayOfMonth; i++) {
+        html += "<div class='day'></div>";
+      }
+
+      for (let day = 1; day <= daysInMonth; day++) {
+        html += `<div class='day'>${day}</div>`;
+      }
+
+      calendar.innerHTML = html;
+    }
+
+    // Initialize the calendar with the current year and month
+    const currentDate = new Date();
+    generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
+  </script>
+</body>
+</html>
