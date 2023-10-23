@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'playfair display',serif;
+}
+
+body{
+     background-color: #72ecf7;
+}
+
+.quote-box{
+    background: #fff;
+    width: 770px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
+.quote-box h2{
+    font-size: 50px;
+    margin-bottom: 20px;
+    position: relative;
+}
+.quote-box h2::after{
+    content: '';
+    width: 75px;
+    height: 3px;
+    border-radius: 3px;
+    background: #72ecf7;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.quote-box blockquote{
+    font-size: 33px;
+    min-height: 110px;
+}
+.quote-box blockquote::before,.quote-box blockquote::after{
+    content: '"';
+}
+.quote-box span{
+    display: block;
+    width: 150px;
+    font-size: 23px;
+    margin-top: 10px;
+    float: right;
+    position: relative;
+}
+.quote-box span::before{
+    content: '';
+    width: 20px;
+    height: 2px;
+    background: #72ecf7;
+    position: absolute;
+    top: 50%;
+    left:  -30px;
+}
+.quote-box div{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+.quote-box button{
+    background-color: #72ecf7;
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 25px;
+    border: 1px rgba(20, 161, 205, 0.15);
+    width: 150px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    cursor: pointer;
+}
+.quote-box button img{
+    margin-right: 10px;
+}
+.quote-box button:hover{
+    background-color: #0bb4c4;
+}
+
+@media(max-width:800px){
+
+    .quote-box{
+        background: #fff;
+        width: 300px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        padding: 20px;
+        border-radius: 6px;
+        text-align: center;
+        box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.15);
+    }
+    .quote-box span{
+        display: block;
+        width: 100px;
+        font-size: 12px;
+        margin-top: 7px;
+        float: right;
+        position: relative;
+    }
+    .quote-box blockquote{
+        font-size: 20px;
+        min-height: 70px;
+}
+}

@@ -1,0 +1,94 @@
+.loader {
+  background-color: #fff;
+  width: 100vw !important;
+  height: 100vh !important;
+}
+
+.card__wrapper {
+  height: auto;
+  overflow: hidden;
+}
+
+.card__wrapper .card__wrapper__row {
+  overflow: inherit;
+  height: inherit;
+}
+
+.card__wrapper .card__wrapper__row .card__wrapper__col {
+  padding: 3em 5em;
+  min-height: 100vh;
+  overflow: inherit;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  column-gap: 1em;
+  row-gap: 0em;
+  align-items: center;
+}
+
+.card__wrapper .card__wrapper__row .card__wrapper__col .card__container {
+  overflow: hidden;
+  width: 25vw;
+  height: 35vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #fff;
+  row-gap: 0.5em;
+}
+
+.card__wrapper
+  .card__wrapper__row
+  .card__wrapper__col
+  .card__container
+  .card__img {
+  overflow: hidden;
+  border-radius: 50%;
+  width: auto;
+  height: 130px;
+}
+
+.card__wrapper
+  .card__wrapper__row
+  .card__wrapper__col
+  .card__container
+  .user__info {
+  overflow: hidden;
+}
+
+.card__wrapper
+  .card__wrapper__row
+  .card__wrapper__col
+  .card__container
+  .user__info
+  h5 {
+  font-size: 1em;
+  color: #000;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 476px) {
+  .card__wrapper .card__wrapper__row .card__wrapper__col {
+    padding: 3em 3em;
+    align-items: center;
+    row-gap: 1.5em;
+  }
+
+  .card__wrapper .card__wrapper__row .card__wrapper__col .card__container {
+    width: 100%;
+    row-gap: 1.3em;
+  }
+}
+
+@media screen and (min-width: 476px) and (max-width: 768px) {
+  .card__wrapper .card__wrapper__row .card__wrapper__col {
+    align-items: center;
+    row-gap: 1.5em;
+  }
+  .card__wrapper .card__wrapper__row .card__wrapper__col .card__container {
+    width: 100%;
+    row-gap: 1.5em;
+  }
+}
