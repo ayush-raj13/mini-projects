@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <title>Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/Calculator.css">
+  
+</head>
+
+<body>
+  <div class="main-div">
+    <p class="js-screen display"></p>
+    <p class="first-row">
+      <button class="button-1" onclick="
+        updateCalculation(1);
+      ">1</button>
+
+      <button onclick="
+        updateCalculation(2);
+      ">2</button>
+
+      <button onclick="
+        updateCalculation(3);
+      ">3</button>
+
+      <button class="yellow-button" onclick="
+        updateCalculation(' + ');
+      ">+</button>
+    </p>
+
+    <p>
+      <button onclick="
+        updateCalculation(4);
+      ">4</button>
+
+      <button onclick="
+        updateCalculation(5);
+      ">5</button>
+
+      <button onclick="
+        updateCalculation(6);
+      ">6</button>
+
+      <button class="yellow-button" onclick="
+        updateCalculation(' - ');
+      ">-</button>
+    </p>
+
+    <p>
+      <button onclick="
+        updateCalculation(7);
+      ">7</button>
+
+      <button onclick="
+        updateCalculation(8);
+      ">8</button>
+
+      <button onclick="
+        updateCalculation(9);
+      ">9</button>
+
+      <button class="yellow-button" onclick="
+        updateCalculation(' * ');
+      ">*</button>
+    </p>
+
+    <p>
+      <button class="yellow-button" onclick="
+        updateCalculation(0);
+      ">0</button>
+
+      <button class="yellow-button" onclick="
+        updateCalculation('.');
+      ">.</button>
+
+      <button class="yellow-button" onclick="
+        updateCalculation('=');
+      ">=</button>
+
+      <button class="yellow-button" onclick="
+        updateCalculation(' / ');
+      ">/</button>
+    </p>
+
+    <p>
+      <button class="long-button" onclick="
+        updateCalculation('Clear');
+      ">Clear</button>
+      <button class="long-button lb1" onclick="
+        answer.history = '0';
+        localStorage.removeItem('answer');
+      ">Clear History</button>
+      <button class="long-button" onclick="
+        calculation = answer.history;
+        displayResult();
+      ">Last answer</button>
+    </p>
+  </div>
+
+  <script src="scripts/Calculator.js"></script>
+</body>
+
+</html>
