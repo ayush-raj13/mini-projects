@@ -8,7 +8,7 @@ using namespace std;
 
 class process {
     public:
-        int id, at, bt, ct, tat, wt;
+        int id, at, bt, ct, tat, wt, priority;
 };
 
 void fcfs(vector<process>& p, int n) {
@@ -27,8 +27,7 @@ void fcfs(vector<process>& p, int n) {
         p[i].wt = p[i].tat - p[i].bt;
 
         if(i + 1 < n && current_time < p[i+1].at) {
-            int time = p[i+1].at;
-            current_time = current_time + time;
+            current_time = p[i+1].at;
         }
     }
 
@@ -190,14 +189,98 @@ void srtf(vector<process>& p, int n) {
     return;
 }
 
-void printInfo(vector<process>& p, int n) {
+void priority_np(vector<process>& p, int n) {
+    auto lambda = [](process& p1, process& p2) {
+        if(p1.at == p2.at) return p1.priority > p2.priority;
+        else return p1.at < p2.at;
+    };
+    sort(p.begin(), p.end(), lambda);
+
+    int current_time = 0;
+    current_time = current_time + p[0].at;
+
+    for(int i=0;i<n;i++) {
+        current_time = current_time + p[i].bt;
+        p[i].ct = current_time;
+        p[i].tat = p[i].ct - p[i].at;
+        p[i].wt = p[i].tat - p[i].bt;
+
+        if(i + 1 < n && current_time < p[i+1].at) {
+            current_time = p[i+1].at;
+        }
+    }
+
+    return;
+}
+
+void priority_p(vector<process>& p, int n) {
+    int pCompleted = 0;
+    int current_time = 0;
+    vector<int> bt_remaining(n);
+    vector<bool> completed(n, false);
+
+    for(int i=0;i<n;i++) {
+        bt_remaining[i] = p[i].bt;
+    }
+
+    while(pCompleted != n) {
+        int indX = -1;
+        int maxi = -1;
+
+        for(int i=0;i<n;i++) {
+            if(p[i].at <= current_time && completed[i] == false) {
+                if(p[i].priority > maxi) {
+                    maxi = p[i].priority;
+                    indX = i;
+                }
+                else if(p[i].priority == maxi) {
+                    if(p[i].at < p[indX].at) {
+                        maxi = p[i].priority;
+                        indX = i;
+                    }
+                }
+            }
+        }
+
+        if(indX != -1) {
+            bt_remaining[indX] -= 1;
+            current_time++;
+
+            if(bt_remaining[indX] == 0) {
+                p[indX].ct = current_time;
+                p[indX].tat = p[indX].ct - p[indX].at;
+                p[indX].wt = p[indX].tat - p[indX].bt;
+
+                pCompleted++;
+                completed[indX] = true;
+            }
+        }
+        else {
+            current_time++;
+        }
+    }
+
+    return;
+}
+
+void printInfo(vector<process>& p, int n, bool isPriority) {
     double atat=0,awt=0;
 
-    cout << "Process\tAT\tBT\tCT\tTAT\tWT\n";
-    for(int i=0;i<n;i++) {
-        cout << p[i].id << "\t" << p[i].at << "\t" << p[i].bt << "\t" << p[i].ct << "\t" << p[i].tat << "\t" << p[i].wt << "\n";
-        atat += p[i].tat;
-        awt += p[i].wt;
+    if(isPriority) {
+        cout << "Process\tAT\tBT\tPriority\tCT\tTAT\tWT\n";
+        for(int i=0;i<n;i++) {
+            cout << p[i].id << "\t" << p[i].at << "\t" << p[i].bt << "\t" << p[i].priority << "\t\t" << p[i].ct << "\t" << p[i].tat << "\t" << p[i].wt << "\n";
+            atat += p[i].tat;
+            awt += p[i].wt;
+        }
+    }
+    else {
+        cout << "Process\tAT\tBT\tCT\tTAT\tWT\n";
+        for(int i=0;i<n;i++) {
+            cout << p[i].id << "\t" << p[i].at << "\t" << p[i].bt << "\t" << p[i].ct << "\t" << p[i].tat << "\t" << p[i].wt << "\n";
+            atat += p[i].tat;
+            awt += p[i].wt;
+        }
     }
     atat /= n;
     awt /= n;
@@ -222,7 +305,7 @@ int main() {
         cin >> p[i].bt;
     }
 
-    cout << "1 FCFS\n" << "2 SJF (Non-Preemptive)\n" << "3 SRTF\n" << "4 Round Robin\n" << "Enter your choice: ";
+    cout << "1 FCFS\n" << "2 SJF (Non-Preemptive)\n" << "3 SRTF\n" << "4 Round Robin\n"  << "5 Priority (Non-Preemptive) Scheduling\n" << "6 Priority (Preemptive) Scheduling\n" << "Enter your choice: ";
     int choice;
     cin >> choice;
 
@@ -230,22 +313,40 @@ int main() {
     {
     case 1:
         fcfs(p, n);
-        printInfo(p, n);
+        printInfo(p, n, false);
         break;
     
     case 2:
         sjfnp(p, n);
-        printInfo(p, n);
+        printInfo(p, n, false);
         break;
 
     case 3:
         srtf(p, n);
-        printInfo(p, n);
+        printInfo(p, n, false);
         break;
 
     case 4:
         rr(p, n);
-        printInfo(p, n);
+        printInfo(p, n, false);
+        break;
+    
+    case 5:
+        for(int i=0;i<n;i++) {
+            cout << "Enter the priority of process " << i + 1 << ": ";
+            cin >> p[i].priority;
+        }
+        priority_np(p, n);
+        printInfo(p, n, true);
+        break;
+    
+    case 6:
+        for(int i=0;i<n;i++) {
+            cout << "Enter the priority of process " << i + 1 << ": ";
+            cin >> p[i].priority;
+        }
+        priority_p(p, n);
+        printInfo(p, n, true);
         break;
 
     default:
