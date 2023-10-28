@@ -1,0 +1,4 @@
+This is a simple C++ PROJECT
+
+it takes in values of either rock, paper or scissor and takes one random value for computer 
+as an opponent and then check who wins according to the conditions provided.
