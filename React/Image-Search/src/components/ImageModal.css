@@ -1,0 +1,46 @@
+
+.image-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    max-height: 100vh;
+    overflow-y: hidden;
+  }
+  
+  .modal-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  
+  .modal-details {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+    color: #000;
+  }
+  
+  .user-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .likes-count {
+    margin-top: 8px;
+  }
+  
+  .description {
+    margin-top: 16px;
+  }
+  
+  .view-profile {
+    margin-top: 16px;
+    text-decoration: none;
+    color: #0074d9;
+    font-weight: bold;
+  }
+  
