@@ -120,7 +120,8 @@ Welcome to the Multilingual Mini-Projects repository! Here, we have a collection
 **Simple Calculator (Javascript)**
 - The Simple Calculator is a web-based tool with basic arithmetic operation. 
 
-Feel free to explore, contribute, or add your own mini-projects in different programming languages. Let's make this repository a diverse and educational collection of code snippets.
+**Dice Roller**
+- A classic Dice rolling game made using basic javascript , html and css.
 
 ## Contributing
 
