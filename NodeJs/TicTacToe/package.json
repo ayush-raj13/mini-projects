@@ -1,0 +1,15 @@
+{
+  "name": "tictactoe",
+  "version": "1.0.0",
+  "description": "terminal based tic tac toe",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vitest": "^1.0.2"
+  }
+}
